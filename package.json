@@ -1,0 +1,54 @@
+{
+	"name": "payroll-utils",
+	"version": "0.0.1-alpha.1",
+	"description": "",
+	"keywords": [
+		"payroll",
+		"gross",
+		"net"
+	],
+	"homepage": "https://github.com/KotonoSora/payroll-utils",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KotonoSora/payroll-utils.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Nguyễn Duy Thắng",
+		"url": "https://github.com/KotonoSora"
+	},
+	"main": "src/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"types": "tsc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --outDir dist",
+		"build": "npm run build.clean && npm run build.only && npm run types",
+		"build.only": "rollup -c",
+		"build.watch": "rollup -c -w",
+		"build.clean": "rimraf dist",
+		"test": "jest",
+		"test.log": "jest --coverage",
+		"test.showlog": "open ./coverage/lcov-report/index.html",
+		"eslint": "eslint src/**",
+		"eslint.fix": "eslint src/** --fix"
+	},
+	"devDependencies": {
+		"@types/jest": "^28.1.4",
+		"@typescript-eslint/eslint-plugin": "^5.30.4",
+		"@typescript-eslint/parser": "^5.30.4",
+		"eslint": "^8.19.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"jest": "^28.1.2",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.75.7",
+		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.32.1",
+		"ts-jest": "^28.0.5",
+		"typescript": "^4.7.4"
+	},
+	"bug": {
+		"url": "https://github.com/KotonoSora/payroll-utils/issues"
+	}
+}
